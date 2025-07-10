@@ -1,0 +1,37 @@
+# Core ML and Data Handling
+transformers
+scikit-learn
+joblib
+pandas
+matplotlib
+numpy<2.0
+weasyprint
+
+# NLP and Text Processing
+spacy==3.7.4
+textblob
+nltk
+textstat
+# To use spaCy NER, run: python -m spacy download en_core_web_sm
+
+# Web Scraping and API
+beautifulsoup4
+requests
+googlesearch-python
+lxml
+newsapi-python
+trafilatura
+
+# LangChain and Vector DB
+langchain
+chromadb
+sentence-transformers
+langchain-community
+
+# Evaluation
+rouge_score
+bert_score
+
+# Flask for Backend
+Flask
+Flask-Caching

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BharatLens - News Analysis Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="main-container">
+            <div class="header">
+                <h1><i class="fas fa-search"></i> BharatLens</h1>
+                <p>Advanced News Analysis & Bias Detection Platform</p>
+            </div>
+            <div class="search-section">
+                <div class="search-box">
+                    <h2 class="text-center mb-4">Analyze News Topic</h2>
+                    <form id="analysisForm">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="topicInput" placeholder="Enter a news topic..." required>
+                            <button type="submit" class="btn btn-analyze" id="analyzeBtn"><i class="fas fa-chart-line"></i> Analyze</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="loading" id="loadingIndicator" style="display:none;">
+                    <div class="spinner"></div>
+                    <h4>Analyzing your topic...</h4>
+                </div>
+            </div>
+            <div class="results-section" id="resultsSection" style="display:none;">
+                <h2 id="resultsHeader"></h2>
+                <div class="result-card" id="perspectivesSection">
+                    <h3><i class="fas fa-globe"></i> Perspectives</h3>
+                    <div class="row" id="perspectivesCards"></div>
+                </div>
+                <div class="result-card">
+                    <h3><i class="fas fa-file-alt"></i> Executive Summary</h3>
+                    <div id="executiveSummary"></div>
+                </div>
+                <div class="result-card">
+                    <h3><i class="fas fa-chart-bar"></i> Analysis Quality Metrics</h3>
+                    <div class="evaluation-grid" id="evaluationMetrics"></div>
+                </div>
+                <div class="visualization-section">
+                    <div class="chart-container" id="historicalChartContainer" style="display:none;">
+                        <h3><i class="fas fa-chart-line"></i> Sentiment Trend Over Time</h3>
+                        <div id="historicalChart"></div>
+                    </div>
+                    <div class="chart-container" id="sourceChartContainer" style="display:none;">
+                        <h3><i class="fas fa-chart-pie"></i> Source Bias Analysis</h3>
+                        <div id="sourceChart"></div>
+                    </div>
+                    <div class="chart-container" id="stanceHeatmapContainer" style="display:none;">
+                        <h3><i class="fas fa-th-large"></i> Stance Sentiment Heatmap</h3>
+                        <div id="stanceHeatmap"></div>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Detailed Bias Report</h3>
+                    <div class="bias-report" id="biasReport"></div>
+                </div>
+                <div class="result-card" id="entitiesSection" style="display:none;">
+                    <h3><i class="fas fa-tags"></i> Entities</h3>
+                    <div id="entitiesList" class="entity-tag-cloud"></div>
+                </div>
+                <div class="result-card" id="timelineSection" style="display:none;">
+                    <h3><i class="fas fa-stream"></i> Event Timeline</h3>
+                    <div id="timelineList" class="timeline-list"></div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>&copy; 2024 BharatLens - Powered by Advanced NLP & AI</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
